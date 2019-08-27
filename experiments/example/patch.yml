@@ -1,0 +1,87 @@
+add_config_to_params: True
+
+# experiment settings
+exp:
+  name: 'Example_Stage_1'
+  dir: '/tmp/mscl'
+  kwargs:
+    checkpoint_freq: 1
+    val_score_key: 'CE'
+    val_score_mode: 'lowest'
+    gpu_ids: # contains the gpu ids from cuda_visible_devices, empty list = 'cpu'
+      - 0
+
+# data settings
+data:
+  path: '/tmp/mscl'
+  kwargs: {}
+  load_patch:
+    random_offset: True
+
+patch_size:
+  - 4
+  - 64
+  - 64
+
+# augmentation
+augment:
+  mode: True # enable/disable augmentation
+  n_process: 4 # number of processes used for augmentation
+  # keyword argument passed to SpatialTransform
+  kwargs:
+    do_elastic_deform: False
+    alpha: !!python/tuple [0., 1500.]
+    sigma: !!python/tuple [30., 50.]
+    do_rotation: True,
+    angle_x: !!python/tuple [0., 0.]
+    angle_y: !!python/tuple [0., 0.]
+    angle_z: !!python/tuple [-0.15, 0.15]
+    do_scale: True
+    scale: !!python/tuple [0.8, 1.1]
+    random_crop: False
+    border_mode_data: 'constant'
+    border_cval_data: 0
+    order_data: 1
+
+parameters:
+  fixed_params:
+    model: {}
+    training:
+      batch_size: 4
+      num_epochs: 50
+      optimizer_cls: 'Adam'
+      optimizer_params:
+        lr: 0.0001
+      lr_sched_cls:
+      lr_sched_params:
+      metrics:
+
+################################################################################
+# Architecture
+################################################################################
+# general settings
+dim: 3 # either 2 or 3
+head_classes: 2  # number of classes for classification
+
+# architecture options:
+# ResNets original: 'resnet18', 'resnet34, 'resnet24', 'resnet50', 'resnet101'
+# ResNets small: 'resnet10'
+# DenseNets original: 'densenet121', 'densenet169', 'densenet201', 'densenet161'
+# DenseNets small: 'densenet37', 'densenet63', 'densenet63r', 'densenet121r'
+# SqueezeNets: 'squeezenet10', 'squeezenet11'
+architecture: 'resnet18'
+
+# additional settings
+dropout: # inserts a dropout layer before the MultiScaleHead
+norm: 'instance_norm'  # one of None, instance_norm, batch_norm
+relu: 'leaky_relu' # either: 'relu', 'leaky_relu', None
+weight_init: # one of 'xavier_uniform', 'xavier_normal', or 'kaiming_normal', None (=default = 'kaiming_uniform')
+
+# backbone
+in_channels: 1  # number of input channels
+start_filts: 18 # number of filters in first block
+end_filts: 36 # number of filters for each feature map from backbone network (NOTE: FPN ONLY)
+reduced_pool: True # reduce pooling in z-directon from 8 slices to 4 slices
+
+# multi scale head
+ms_pooling: False # additional adaptive pooling layer inside multi scale head
