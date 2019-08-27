@@ -4,6 +4,12 @@ Code for our paper *Multi Scale Curriculum CNN for Context-Aware Breast MRI Mali
 
 ![model](assets/Network.png "Multi Scale Curriculum Learning Model")
 
+## TL;DR
+We propose a 3D CNN and a multi scale curriculum learning strategy to classify malignancy globally based on an MRI of the whole breast.
+Our proposed approach does not rely on lesion segmentations, which renders the annotation of training data much more effective than in current object detection approaches.
+Achieving an AUROC of 0.89, we compare the performance of our approach to Mask R-CNN and Retina U-Net as well as a radiologist.
+Performance is on par with approaches that, in contrast to our method, rely on pixelwise segmentations of lesions.
+
 ## Installation
 This repository has been tested with Ubuntu 18.04 and macOS 10.14 Mojave, we highly recommend using a dedicated GPU though.
 
