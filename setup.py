@@ -42,7 +42,7 @@ setup(
     author='Michael Baumgartner, Christoph Haarburger',
     version=mscl_version,
     packages=find_packages(),
-    url='',  # TODO : correct url
+    url='https://github.com/haarburger/multi-scale-curriculum',
     test_suite="unittest",
     long_description=readme,
     long_description_content_type='text/markdown',
