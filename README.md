@@ -1,6 +1,6 @@
 # Multi Scale Curriculum CNN for Context-Aware Breast MRI Malignancy Classification
 
-Code for our paper *Multi Scale Curriculum CNN for Context-Aware Breast MRI Malignancy Classification* accepted for oral presentation at [MICCAI 2019](https://www.miccai2019.org).
+Code for our [paper](https://arxiv.org/abs/1906.06058) *Multi Scale Curriculum CNN for Context-Aware Breast MRI Malignancy Classification* accepted for oral presentation at [MICCAI 2019](https://www.miccai2019.org).
 
 ![model](assets/Network.png "Multi Scale Curriculum Learning Model")
 
