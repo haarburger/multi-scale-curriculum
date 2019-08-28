@@ -138,34 +138,6 @@ class ClassNetwork(AbstractPyTorchNetwork):
                                    "env_appendix": "_%02d" % fold
                                    }})
 
-        # TODO: remove
-        # logging.info({
-        #     'image_grid': {
-        #         "image_array":
-        #             inputs[:, 0, ..., inputs.shape[-1] //
-        #                    2].detach().cpu().numpy(),
-        #         "name": "input_images",
-        #         "env_appendix": "_%02d" % fold,
-        #         "normalize": True}})
-
-        # class_pred = F.softmax(pred_dict["pred"].detach(), dim=1)
-
-        # TODO: remove
-        # # logging with evaluator
-        # log_dict = {'class': {'pred': class_pred.cpu().numpy(),
-        #                       'gt': label.detach().cpu().numpy()},
-        #             'id': data_dict.pop('id', None),
-        #             'uid': data_dict.pop('uid', None)}
-
-        # TODO: remove
-        # with torch.no_grad():
-        #     if optimizers and "train" in metrics:
-        #         metrics["train"](log_dict)
-        #         metrics["train"].log_batch_metrics(fold=fold)
-        #     elif not optimizers and "val" in metrics:
-        #         metrics["val"](log_dict)
-        #         metrics["val"].log_batch_metrics(fold=fold)
-
         return metric_vals, loss_vals, {k: v.detach().cpu().numpy() for k, v in
                                         pred_dict.items()}
 

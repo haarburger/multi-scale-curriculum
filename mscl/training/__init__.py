@@ -1,2 +1,1 @@
-from .experiment import PytorchExperimentPredictor
-from .predictor import TestPredictor
+from .wrapper import metric_wrapper_pytorch, prep_classification
