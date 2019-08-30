@@ -1,1 +1,1 @@
-delira[torch]
+delira[torch]==0.4.1
