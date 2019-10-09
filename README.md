@@ -52,6 +52,7 @@ If you use our work, please cite our paper as follows
 @inproceedings{haarburger_2019,
     Author = {Christoph Haarburger and Michael Baumgartner and Daniel Truhn and Mirjam Broeckmann and Hannah Schneider and Simone Schrading and Christiane Kuhl and Dorit Merhof},
     Booktitle = {Medical Image Computing and Computer Assisted Intervention (MICCAI)},
+    Doi = {10.1007/978-3-030-32251-9_54},
     Title = {Multi Scale Curriculum CNN for Context-Aware Breast MRI Malignancy Classification},
     Year = {2019}}
 ```
