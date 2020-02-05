@@ -10,6 +10,15 @@ Our proposed approach does not rely on lesion segmentations, which renders the a
 Achieving an AUROC of 0.89, we compare the performance of our approach to Mask R-CNN and Retina U-Net as well as a radiologist.
 Performance is on par with approaches that, in contrast to our method, rely on pixelwise segmentations of lesions.
 
+## License
+ Copyright (C) 2019 by RWTH Aachen University                        
+http://www.rwth-aachen.de    
+
+License:
+This software is dual-licensed under:                                 
+* Commercial license (please contact: lfb@lfb.rwth-aachen.de)         
+* AGPL (GNU Affero General Public License) open source license
+
 ## Installation
 This repository has been tested with Ubuntu 18.04 and macOS 10.14 Mojave, we highly recommend using a dedicated GPU though.
 
